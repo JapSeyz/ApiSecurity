@@ -21,6 +21,8 @@ class ServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        Route::get('/api/timestamp', function(){
+        	return time();
+        });
     }
 }
