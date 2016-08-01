@@ -3,15 +3,20 @@
 namespace JapSeyz\ApiSecurity;
 
 use Illuminate\Support\ServiceProvider;
-use JapSeyz\ApiSecurity\Middleware;
+use JapSeyz\ApiSecurity\Check;
+use JapSeyz\ApiSecurity\ThrottleRequests;
 
 class LumenServiceProvider extends ServiceProvider
 {
     public function boot()
     {
         $this->app->routeMiddleware([
-            'api.check' => Middleware::class,
+            'api.check' => Check::class,
         ]);
+
+        $app->routeMiddleware([
+    			'throttle' => ThrottleRequests::class,
+				]);
     }
 
     /**
@@ -21,8 +26,12 @@ class LumenServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->get('/api/timestamp', function(){
-					return time();
-				});
+    	$this->app->group(['group' => 'throttle:15,1'], function() use($app){
+	    		$this->app->get('/api/timestamp', function(){
+						return response()->json([
+								'timestamp' => time()
+							]);
+					});
+    	})
     }
 }

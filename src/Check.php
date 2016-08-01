@@ -5,7 +5,7 @@ namespace JapSeyz\ApiSecurity;
 use Closure;
 use JapSeyz\ApiSecurity\Utils;
 
-class Middleware
+class Check
 {
     /**
      * Handle an incoming request.
