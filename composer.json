@@ -8,6 +8,6 @@
             "email": "jesper@oestertoft.dk"
         }
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "require": {}
 }
