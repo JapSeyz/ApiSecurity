@@ -1,0 +1,13 @@
+{
+    "name": "japseyz/apisecurity",
+    "description": "Protects API routes with a token",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jesper Jacobsen",
+            "email": "jesper@oestertoft.dk"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
