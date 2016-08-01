@@ -5,7 +5,7 @@ namespace JapSeyz\ApiSecurity;
 use Illuminate\Support\ServiceProvider;
 use JapSeyz\ApiSecurity\Middleware;
 
-class ServiceProvider extends ServiceProvider
+class LaravelServiceProvider extends ServiceProvider
 {
     public function boot()
     {
