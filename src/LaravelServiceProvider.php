@@ -9,7 +9,7 @@ class LaravelServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        $this->app['router']->middleware([
+        $this->app[ 'router' ]->middleware([
             'api.check' => Middleware::class,
         ]);
     }
@@ -21,12 +21,12 @@ class LaravelServiceProvider extends ServiceProvider
      */
     public function register()
     {
-    	Route::group(['middleware' => 'throttle:15,1'], function(){
-        Route::get('/api/timestamp', function(){
-        	return response()->json([
-        		'timestamp' => time()
-        	]);
+        Route::group(['middleware' => 'throttle:15,1'], function () {
+            Route::get('/api/timestamp', function () {
+                return response()->json([
+                    'timestamp' => time(),
+                ]);
+            });
         });
-      })
     }
 }
