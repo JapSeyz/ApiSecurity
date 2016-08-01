@@ -8,6 +8,11 @@
             "email": "jesper@oestertoft.dk"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "JapSeyz\\ApiSecurity\\": "src/"
+        }
+    },
     "minimum-stability": "dev",
     "require": {}
 }
