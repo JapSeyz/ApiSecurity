@@ -1,11 +1,11 @@
 <?php
 
-namespace JapSeyz\ApiSecurity\Http\Middleware;
+namespace JapSeyz\ApiSecurity;
 
 use Closure;
-use JapSeyz\ApiSecurity\Support\Utils;
+use JapSeyz\ApiSecurity\Utils;
 
-class Check
+class Middleware
 {
     /**
      * Handle an incoming request.

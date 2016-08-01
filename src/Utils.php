@@ -1,6 +1,6 @@
 <?php
 
-namespace JapSeyz\ApiSecurity\Support;
+namespace JapSeyz\ApiSecurity;
 
 class Utils
 {

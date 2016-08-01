@@ -1,16 +1,16 @@
 <?php
 
-namespace JapSeyz\ApiSecurity\Providers;
+namespace JapSeyz\ApiSecurity;
 
 use Illuminate\Support\ServiceProvider;
-use JapSeyz\ApiSecurity\Http\Middleware\Check;
+use JapSeyz\ApiSecurity\Middleware;
 
-class ApiServiceProvider extends ServiceProvider
+class ServiceProvider extends ServiceProvider
 {
     public function boot()
     {
         $this->app->routeMiddleware([
-            'api.check' => Check::class,
+            'api.check' => Middleware::class,
         ]);
     }
 
