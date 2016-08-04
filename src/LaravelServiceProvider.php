@@ -3,14 +3,13 @@
 namespace JapSeyz\ApiSecurity;
 
 use Illuminate\Support\ServiceProvider;
-use JapSeyz\ApiSecurity\Middleware;
 
 class LaravelServiceProvider extends ServiceProvider
 {
     public function boot()
     {
         $this->app[ 'router' ]->middleware([
-            'api.check' => Middleware::class,
+            'api.check' => Check::class,
         ]);
     }
 

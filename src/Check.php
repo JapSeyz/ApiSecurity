@@ -24,15 +24,15 @@ class Check
         }
 
         // Make sure an Api token is provided
-        if (!$request->headers->has('api-token')) {
+        if (!$request->headers->has('X-server-token')) {
             return response()->json([
                 'status'  => 'error',
-                'message' => 'API-token not found',
+                'message' => 'Server-token not found',
             ], 403);
         }
 
         // Parse the Token
-        if (Utils::parseAPIToken($request->header('api-token'))) {
+        if (Utils::parseAPIToken($request->header('X-server-token'))) {
             // The parse was successful, continue
             return $next($request);
         }
@@ -40,7 +40,7 @@ class Check
         // Unsuccessful parse
         return response()->json([
             'status'  => 'error',
-            'message' => 'Invalid API-token',
+            'message' => 'Invalid server-token',
         ], 403);
     }
 }
