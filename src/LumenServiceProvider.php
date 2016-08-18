@@ -11,10 +11,6 @@ class LumenServiceProvider extends ServiceProvider
         $this->app->routeMiddleware([
             'api.check' => Check::class,
         ]);
-
-        $this->app->routeMiddleware([
-            'throttle' => ThrottleRequests::class,
-        ]);
     }
 
     /**
@@ -24,12 +20,10 @@ class LumenServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->group(['middleware' => 'throttle:15,1'], function () {
-            $this->app->get('/api/timestamp', function () {
-                return response()->json([
-                    'timestamp' => time(),
-                ]);
-            });
+        $this->app->get('/api/timestamp', function () {
+            return response()->json([
+                'timestamp' => time(),
+            ]);
         });
     }
 }

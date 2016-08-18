@@ -20,12 +20,10 @@ class LaravelServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        Route::group(['middleware' => 'throttle:15,1'], function () {
-            Route::get('/api/timestamp', function () {
-                return response()->json([
-                    'timestamp' => time(),
-                ]);
-            });
+        Route::get('/api/timestamp', function () {
+            return response()->json([
+                'timestamp' => time(),
+            ]);
         });
     }
 }
