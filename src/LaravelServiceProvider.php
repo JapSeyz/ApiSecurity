@@ -19,10 +19,6 @@ class LaravelServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        Route::get('/api/timestamp', function () {
-            return response()->json([
-                'timestamp' => time(),
-            ]);
-        });
+        //
     }
 }
