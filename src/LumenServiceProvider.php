@@ -20,10 +20,6 @@ class LumenServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->get('/api/timestamp', function () {
-            return response()->json([
-                'timestamp' => time(),
-            ]);
-        });
+        //
     }
 }
