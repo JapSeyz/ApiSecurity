@@ -17,6 +17,11 @@ class Check
      */
     public function handle($request, Closure $next)
     {
+        if(env('JAPSEYZ_APISECURITY_DISABLE_IN_DEVELOPMENT', false) && env('APP_ENV', 'production') == 'local'){
+            return $next($request);
+        }
+        
+        
         if (env('JAPSEYZ_APISECURITY_CHECK_AUTH', false)) {
             if (auth()->check()) {
                 return $next($request);
