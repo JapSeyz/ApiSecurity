@@ -26,8 +26,9 @@ class Utils
 
     public static function parseAPIToken($token)
     {
+        $globalTime = time();
         for ($i = 0; $i < 60; $i++) {
-            $time = time() - $i;
+            $time = $globalTime - $i;
             $generatedToken = Utils::generateAPIToken($time);
 
             if ($generatedToken === $token) {
